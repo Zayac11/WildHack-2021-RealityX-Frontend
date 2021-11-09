@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# WildHack 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This MVP was made by RealityX.
 
-## Available Scripts
+**Stack:**
 
-In the project directory, you can run:
+[![ReactJs](https://img.shields.io/badge/React.js-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
+[![Redux](https://img.shields.io/badge/Redux.js-764ABC?logo=redux&logoColor=white)](https://redux.js.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?logo=docker&logoColor=white)](https://www.docker.com/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation and layout
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Download Node.js from https://nodejs.org/en/download/
 
-### `npm test`
+* Update npm
+    ```bash
+    npm install -g npm
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Clone this repository
+    ```bash
+    git clone https://github.com/Zayac11/WildHack-2021-RealityX-Frontend
+    ```
 
-### `npm run build`
+* Open a console in a folder and go to the cloned repository
+    ```bash
+    cd WildHack-2021-RealityX-Frontend
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Install the packages required for the project
+    ```bash
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Finally, start the project
+    * Create `.env` file in the directory named `WildHack-2021-RealityX-Frontend` and add your secret data to it
+        ```env
+        REACT_APP_PRODUCTION_URL = "your domain name"
+        ```
+    * And start project
+        ```bash
+        npm start
+        ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Now wait, our project will open soon in the browser on the http://localhost:3000/
 
-### `npm run eject`
+## Build
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Open console in `WildHack-2021-RealityX-Frontend`
+2. `npm run build` builds the app for production to the build folder.
