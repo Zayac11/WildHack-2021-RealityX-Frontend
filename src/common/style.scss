@@ -1,0 +1,24 @@
+.outer {
+    //min-height: 100vh;
+    position: relative;
+    background-color: #f2f3f7;
+}
+
+.container {
+    background-color: #f2f3f7;
+    max-width: 480px;
+    margin: 0 auto;
+    //min-height: 100vh;
+}
+
+.image-gallery-slide img {
+    width: 100%;
+    //height: 280px !important;
+    //object-fit: cover !important;
+    overflow: hidden;
+    object-position: center center;
+}
+
+.image-gallery-slide {
+    bottom: 0;
+}

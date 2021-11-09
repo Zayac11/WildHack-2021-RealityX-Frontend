@@ -1,12 +1,11 @@
 import React, {FC} from 'react';
-import './App.scss';
 
-const App:FC = () => {
+const Container:FC = () => {
     return (
         <div>
 
         </div>
     );
-}
+};
 
-export default App;
+export default Container;

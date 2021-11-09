@@ -1,0 +1,13 @@
+$primary-color: #7764F5;
+$primary-active: #5942F5;
+$primary-disabled: #998AF9;
+$title-color: #081D3F;
+$description-color: #4A6375;
+$buttons-color: #f2f3f5;
+$buttons-active: #f2f3f5;
+$error-text-color: #ED5959;
+
+@mixin flexible {
+    display: flex;
+    align-items: center;
+}
