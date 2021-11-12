@@ -1,9 +1,11 @@
 import {Action, applyMiddleware, combineReducers, createStore} from "redux";
 import thunkMiddleware, {ThunkAction} from 'redux-thunk';
 import authReducer from "./auth-reducer";
+import searchReducer from "./search-reducer";
 
 let rootReducer  = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    search: searchReducer
 });
 
 type RootReducerType = typeof rootReducer //(globalState: AppStateType) => AppStateType

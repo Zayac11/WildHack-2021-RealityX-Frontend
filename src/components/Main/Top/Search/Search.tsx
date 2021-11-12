@@ -1,26 +1,36 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import s from './Search.module.scss'
 import {DebounceInput} from 'react-debounce-input'
 import LabelLoup from './LabelLoup/LabelLoup';
+import {getHints} from "../../../../redux/search-reducer";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStateType} from "../../../../redux/redux-store";
 
 const Search:FC = () => {
-    const initialArray = ['cinema',
-        'music',
-        'games',
-        'tv',
-        'art',
-        'images',
-        'programming',
-        'portal',
-        'documents',
-        'folders',
-        'repositories',
-        'react',]
+    // const initialArray = ['cinema',
+    //     'music',
+    //     'games',
+    //     'tv',
+    //     'art',
+    //     'images',
+    //     'programming',
+    //     'portal',
+    //     'documents',
+    //     'folders',
+    //     'repositories',
+    //     'react',]
+
+    const dispatch = useDispatch()
+    const hints = useSelector((state:AppStateType) => state.search.hints)
 
     const [showInput, setShopInput] = useState(false)
     const [letters, setLetter] = useState('')
-    const [array, setArray] = useState<Array<string>>(initialArray.sort())
-    const [tags, setTags] = useState<Array<string>>([]) //Массив тегов
+    const [array, setArray] = useState<Array<string>>([])
+
+    useEffect(() => {
+        setArray(hints)
+        setSearchList(getMatchedList(letters, hints))
+    }, [hints])
 
     const handleBlur = (showInput:boolean) => {
         setShopInput(showInput)
@@ -31,14 +41,12 @@ const Search:FC = () => {
         let newList = getMatchedList(letters, filteredArray)
         setArray(filteredArray)
         setSearchList(newList)
-        setTags([
-            ...tags, value
-        ])
     }
 
     const handleChangeValue = (value:string) => {
         setSearchList(getMatchedList(value, array))
         setLetter(value)
+        dispatch(getHints(value))
     }
 
     const getMatchedList = (searchText:string, array:Array<string>) => {
@@ -49,7 +57,7 @@ const Search:FC = () => {
     let textHighlighter:any;
 
     const handleSubmit = () => {
-
+        dispatch(getHints(letters))
     }
 
     return (
@@ -66,7 +74,7 @@ const Search:FC = () => {
                             className={s.input}
                             onBlur={() => handleBlur(false)}
                             type="text"
-                            debounceTimeout={300}
+                            debounceTimeout={500}
                             onChange={(e) => handleChangeValue(e.target.value)} />
 
                         {
