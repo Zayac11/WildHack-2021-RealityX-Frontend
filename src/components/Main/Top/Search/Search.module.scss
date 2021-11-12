@@ -1,34 +1,36 @@
 @import "./src/common/commonStyles";
 
-.login {
-    width: 120px;
-}
 
 .search {
-
+    width: calc(100% - 135px);
 }
 
 .inputContainer {
     border-radius: 28px;
     position: relative;
+    width: 100%;
+
 }
 
 .input {
     position: relative;
     z-index: 20;
-    border-radius: 28px;
+    border-radius: 56px;
     outline: none;
     border: none;
     width: 100%;
     background: rgba(255,255,255,1);
-    padding: 16px 120px 16px 20px;
+    padding: 19px 120px 18px 30px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 .list {
     border-radius: 28px;
     background: rgba(255,255,255,1);
     position: absolute;
-    padding: 43px 10px 10px;
+    padding: 58px 20px 20px;
     top: 0;
     list-style: none;
     left: 0;
@@ -40,29 +42,33 @@
 }
 
 .item {
-    border-radius: 6px;
-    font-size: 14px;
-    transition: background .3s ease 0s;
     cursor: pointer;
-    padding: 2px 5px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #717171;
+    transition: all 0.3s ease;
+    padding: 10px;
 }
 
 .item:hover {
-    background-color: rgba(219, 222, 255, .3);
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    color: #3e3e3e;
 }
 
 .container {
-    border-radius: 56px;
+    height: 58px;
     width: 100%;
-    padding: 14px 120px 14px 20px;
-    background: rgba(255,255,255,.2);
+    border-radius: 56px;
+    padding: 19px 120px 18px 30px;
+    background: rgba(255,255,255, 1);
     cursor: pointer;
-    transition: background .3s ease 0s;
-}
-.container:hover {
-    background: rgba(255,255,255,.5);
 }
 
 .closedPlaceholder {
-
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.25);
 }

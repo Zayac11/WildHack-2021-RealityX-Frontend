@@ -19,9 +19,27 @@
     margin-bottom: 30px;
 }
 
+.searchLine {
+    @include flexible();
+    width: 100%;
+}
+
+.login {
+    margin-left: 15px;
+    border: 1px solid #FFFFFF;
+    border-radius: 33px;
+    font-weight: 600;
+    padding: 18px 33px;
+    height: 58px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+
+}
+
 @media (max-width: 1600px) {
     .top {
-        padding: 100px 0 60px;
+        padding: 100px 0 80px;
     }
     .demo {
         font-size: 18px;

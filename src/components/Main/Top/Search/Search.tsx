@@ -18,14 +18,9 @@ const Search = () => {
 
     const [showInput, setShopInput] = useState(false)
     const [letters, setLetter] = useState('')
-
     const [array, setArray] = useState<Array<string>>(initialArray.sort())
-
     const [tags, setTags] = useState<Array<string>>([]) //Массив тегов
 
-    // const handleChange = (value) => {
-    //     setLetter(value)
-    // }
     const handleBlur = (showInput:boolean) => {
         setShopInput(showInput)
     }
@@ -69,35 +64,33 @@ const Search = () => {
                             debounceTimeout={300}
                             onChange={(e) => handleChangeValue(e.target.value)} />
 
-                        {/*<input autoFocus onBlur={() => handleBlur(false)} className={s.input} value={letters} onChange={(e) => handleChange(e.target.value)}*/}
-                        {/*       type='text' placeholder='Я ищу...' />*/}
-                        <div className={s.list}>
-                            {
-                                searchList.length > 0 &&
-                                <div className={s.listContainer}>
-                                    {
-                                        searchList.map((search, index) => {
-                                            //Выделение символов
-                                            let searchKeywordIdx = search.indexOf(letters);
-                                            if (searchKeywordIdx > -1) {
-                                                textHighlighter = [
-                                                    search.substring(0, searchKeywordIdx),
-                                                    <span style={{fontWeight: 700}} key={index}>
-                                                            {search.substring(searchKeywordIdx, searchKeywordIdx + letters.length)}
-                                                        </span>,
-                                                    search.substring(searchKeywordIdx + letters.length)
-                                                ];
-                                            }
-                                            return (
-                                                <div className={s.item} onClick={() => handleDeleteItem(search, array)}>
-                                                    <span>{textHighlighter}</span>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            }
-                        </div>
+                        {
+                            searchList.length > 0 &&
+                            <div className={s.list}>
+                                    <div className={s.listContainer}>
+                                        {
+                                            searchList.map((search, index) => {
+                                                //Выделение символов
+                                                let searchKeywordIdx = search.indexOf(letters.toLowerCase());
+                                                if (searchKeywordIdx > -1) {
+                                                    textHighlighter = [
+                                                        search.substring(0, searchKeywordIdx),
+                                                        <span style={{fontWeight: 600, color: 'black'}} key={search}>
+                                                                {search.substring(searchKeywordIdx, searchKeywordIdx + letters.length)}
+                                                            </span>,
+                                                        search.substring(searchKeywordIdx + letters.length)
+                                                    ];
+                                                }
+                                                return (
+                                                    <div key={search} className={s.item} onClick={() => handleDeleteItem(search, array)}>
+                                                        <span>{textHighlighter}</span>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                            </div>
+                        }
                     </div>
                     :
                     <>
