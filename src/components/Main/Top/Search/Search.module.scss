@@ -1,6 +1,5 @@
 @import "./src/common/commonStyles";
 
-
 .search {
     width: calc(100% - 135px);
 }
@@ -58,6 +57,7 @@
 }
 
 .container {
+    position: relative;
     height: 58px;
     width: 100%;
     border-radius: 56px;

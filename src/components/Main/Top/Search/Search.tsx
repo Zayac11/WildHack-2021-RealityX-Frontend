@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import s from './Search.module.scss'
 import {DebounceInput} from 'react-debounce-input'
+import LabelLoup from './LabelLoup/LabelLoup';
 
-const Search = () => {
+const Search:FC = () => {
     const initialArray = ['cinema',
         'music',
         'games',
@@ -47,12 +48,16 @@ const Search = () => {
     const [searchList, setSearchList] = useState(array) //Массив совпадений
     let textHighlighter:any;
 
+    const handleSubmit = () => {
+
+    }
 
     return (
         <div className={s.search}>
             {
                 showInput ?
                     <div className={s.inputContainer}>
+                        <LabelLoup letters={letters} handleSubmit={handleSubmit} />
                         <DebounceInput
                             value={letters}
                             autoFocus
@@ -95,6 +100,7 @@ const Search = () => {
                     :
                     <>
                         <div onClick={() => setShopInput(true)} className={s.container}>
+                            <LabelLoup letters={letters} handleSubmit={handleSubmit} />
                             {
                                 letters !== '' ?
                                     <span className={s.closedPlaceholder}>{letters}</span>
