@@ -1,11 +1,12 @@
 import React, {FC} from 'react';
-import s from './Main.module.scss'
+import Cards from './Cards/Cards';
 import Top from './Top/Top';
 
 const Main:FC = () => {
     return (
         <div className={'outer'}>
             <Top />
+            <Cards />
         </div>
     );
 };

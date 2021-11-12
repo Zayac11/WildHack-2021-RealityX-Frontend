@@ -1,0 +1,8 @@
+@import "./src/common/commonStyles";
+
+.cards {
+    padding: 50px 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}

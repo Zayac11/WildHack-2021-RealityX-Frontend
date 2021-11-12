@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {FC} from 'react';
 import s from './Top.module.scss'
 import logos from '../../../assets/images/Logos.png'
 import Search from "./Search/Search";
 import { NavLink } from 'react-router-dom';
 
-const Top = () => {
+const Top:FC = () => {
     return (
         <div className={'gradientTop'}>
             <div className={'container'}>
