@@ -1,24 +1,17 @@
 .outer {
-    //min-height: 100vh;
     position: relative;
-    background-color: #f2f3f7;
+    background-color: #e5e5e5;
+    min-height: 100vh;
 }
 
 .container {
-    background-color: #f2f3f7;
-    max-width: 480px;
+    max-width: 1220px;
     margin: 0 auto;
-    //min-height: 100vh;
+    position: relative;
 }
 
-.image-gallery-slide img {
+.gradientTop {
     width: 100%;
-    //height: 280px !important;
-    //object-fit: cover !important;
-    overflow: hidden;
-    object-position: center center;
-}
-
-.image-gallery-slide {
-    bottom: 0;
+    background: linear-gradient(90deg, #CB11AB 0%, #481173 100%);
+    border-radius: 0 0 30px 30px;
 }

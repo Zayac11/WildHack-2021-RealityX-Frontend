@@ -1,0 +1,68 @@
+@import "./src/common/commonStyles";
+
+.login {
+    width: 120px;
+}
+
+.search {
+
+}
+
+.inputContainer {
+    border-radius: 28px;
+    position: relative;
+}
+
+.input {
+    position: relative;
+    z-index: 20;
+    border-radius: 28px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: rgba(255,255,255,1);
+    padding: 16px 120px 16px 20px;
+}
+
+.list {
+    border-radius: 28px;
+    background: rgba(255,255,255,1);
+    position: absolute;
+    padding: 43px 10px 10px;
+    top: 0;
+    list-style: none;
+    left: 0;
+    width: 100%;
+}
+
+.listContainer {
+    margin-top: 5px;
+}
+
+.item {
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background .3s ease 0s;
+    cursor: pointer;
+    padding: 2px 5px;
+}
+
+.item:hover {
+    background-color: rgba(219, 222, 255, .3);
+}
+
+.container {
+    border-radius: 56px;
+    width: 100%;
+    padding: 14px 120px 14px 20px;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+    transition: background .3s ease 0s;
+}
+.container:hover {
+    background: rgba(255,255,255,.5);
+}
+
+.closedPlaceholder {
+
+}
