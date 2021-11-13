@@ -5,9 +5,25 @@
 }
 
 .logos {
-    width: 28%;
     margin: 0 auto 89px;
+    @include flexible();
+    justify-content: center;
 }
+
+.wildhack {
+    width: 13%;
+}
+
+.cross {
+    margin: 0 30px;
+    width: .6%;
+}
+
+.reality {
+    width: 12%;
+}
+
+
 
 .demo {
     text-align: center;
