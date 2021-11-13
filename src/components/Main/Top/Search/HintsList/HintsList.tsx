@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import s from "../Search.module.scss";
+import s from "./HintsList.module.scss";
 import {motion} from 'framer-motion'
 
 const HintsList:FC<MyProps> = ({searchList, notMatchedArray, textHighlighter, letters, handleSelect}) => {

@@ -4,8 +4,8 @@
     padding: 170px 0 120px;
 }
 
-    .logos {
-            margin: 0 auto 89px;
+.logos {
+    margin: 0 auto 89px;
     @include flexible();
     justify-content: center;
     animation-name: logos;
@@ -39,24 +39,6 @@
     margin-bottom: 30px;
 }
 
-.searchLine {
-    @include flexible();
-    width: 100%;
-}
-
-.login {
-    margin-left: 15px;
-    border: 1px solid #FFFFFF;
-    border-radius: 33px;
-    font-weight: 600;
-    padding: 18px 33px;
-    height: 58px;
-    font-size: 18px;
-    line-height: 21px;
-    color: #FFFFFF;
-
-}
-
 @keyframes logos {
     from {
         opacity: 0;
@@ -69,7 +51,7 @@
 
 @media (max-width: 1600px) {
     .top {
-        padding: 100px 0 80px;
+        padding: 100px 0 138px;
     }
     .demo {
         font-size: 18px;
@@ -78,3 +60,4 @@
         margin: 0 auto 60px;
     }
 }
+

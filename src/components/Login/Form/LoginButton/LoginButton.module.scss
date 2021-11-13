@@ -1,0 +1,13 @@
+@import "./src/common/commonStyles";
+
+.button {
+    display: block;
+    background: linear-gradient(90deg, #9B4CA6 0%, #CB11AB 100%);
+    border-radius: 33px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    padding: 18px 34px;
+    cursor: pointer;
+}

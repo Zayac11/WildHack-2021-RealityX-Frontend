@@ -1,0 +1,30 @@
+@import "./src/common/commonStyles";
+
+.list {
+    border-radius: 28px;
+    background: rgba(255,255,255,1);
+    position: absolute;
+    padding: 58px 20px 20px;
+    top: 0;
+    list-style: none;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.15);
+    margin-top: 5px;
+}
+
+.item {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #717171;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.item:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    color: $primary-text-color;
+}
