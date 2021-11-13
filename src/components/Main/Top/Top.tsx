@@ -9,6 +9,7 @@ import {AppStateType} from "../../../redux/redux-store";
 import reality from '../../../assets/images/realityx.svg'
 import cross from '../../../assets/images/x.svg'
 import wildhack from '../../../assets/images/wildhack.svg'
+import Logo from '../../../common/Logo/Logo';
 
 const Top:FC = () => {
 
@@ -26,11 +27,7 @@ const Top:FC = () => {
         <div className={'gradientTop'}>
             <div className={'container'}>
                 <div className={s.top}>
-                    <div className={s.logos}>
-                        <img className={s.wildhack} src={wildhack} alt='wildhack' />
-                        <img className={s.cross} src={cross} alt='cross' />
-                        <img className={s.reality} src={reality} alt='team' />
-                    </div>
+                    <Logo />
                     <div className={s.demo}>
                         SMART SEARCH DEMO
                     </div>

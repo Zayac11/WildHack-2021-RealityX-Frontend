@@ -5,7 +5,7 @@ import {DebounceInput} from "react-debounce-input";
 import HintsList from "../HintsList/HintsList";
 
 const SearchInput:FC<MyProps> = ({letters, handleSubmit, handleBlur, handleSelect,
-                                     searchList, notMatchedArray, textHighlighter,
+                                     searchList, notMatchedArray,
                                      handleChangeValue, isDisplayingLoup}) => {
     return (
         <div className={s.inputContainer}>
@@ -25,7 +25,7 @@ const SearchInput:FC<MyProps> = ({letters, handleSubmit, handleBlur, handleSelec
                 onChange={(e) => handleChangeValue(e.target.value)} />
 
             <HintsList searchList={searchList} letters={letters} handleSelect={handleSelect}
-                       notMatchedArray={notMatchedArray} textHighlighter={textHighlighter}
+                       notMatchedArray={notMatchedArray}
             />
         </div>
     );
@@ -41,6 +41,5 @@ type MyProps = {
     handleChangeValue: (value: string) => void,
     searchList: Array<string>,
     notMatchedArray: Array<string>,
-    textHighlighter: any
     handleSelect: (item: string) => void
 }

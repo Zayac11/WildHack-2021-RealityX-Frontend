@@ -1,5 +1,4 @@
 import {BaseThunkType, InferActionsTypes} from "./redux-store";
-import {authAPI} from "../api/auth-api";
 import {searchAPI} from "../api/search-api";
 import {StatusCodesEnum} from "../api/api";
 

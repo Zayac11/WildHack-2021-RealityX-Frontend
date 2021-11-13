@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import s from "./HintsList.module.scss";
 import {motion} from 'framer-motion'
 
-const HintsList:FC<MyProps> = ({searchList, notMatchedArray, textHighlighter, letters, handleSelect}) => {
+const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSelect}) => {
     const animationContainer = {
         hidden: {opacity: 1, scale: 1},
         visible: {
@@ -22,6 +22,7 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, textHighlighter, le
             opacity: 1
         }
     }
+    let textHighlighter:any;
     return (
         <motion.div variants={animationContainer}
                     animate='visible'
@@ -74,7 +75,6 @@ export default HintsList;
 type MyProps = {
     searchList: Array<string>,
     notMatchedArray: Array<string>,
-    textHighlighter: any
     letters: string
     handleSelect: (item: string) => void
 }

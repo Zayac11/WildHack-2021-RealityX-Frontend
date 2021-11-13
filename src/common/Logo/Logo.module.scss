@@ -1,0 +1,48 @@
+@import "./src/common/commonStyles";
+
+.logos {
+    margin: 0 auto 89px;
+    @include flexible();
+    justify-content: center;
+    animation-name: logos;
+    animation-duration: 2s;
+    opacity: 1;
+}
+
+.wildhack {
+    width: 20%;
+}
+
+.cross {
+    margin: 0 30px;
+    width: .9%;
+}
+
+.reality {
+    width: 18%;
+}
+
+@keyframes logos {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1600px) {
+    .logos {
+        margin: 0 auto 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .cross {
+        margin: 0 20px;
+    }
+    .logos {
+        margin: 0 auto 30px;
+    }
+}

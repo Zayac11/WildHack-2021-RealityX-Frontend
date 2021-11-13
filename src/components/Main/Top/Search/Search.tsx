@@ -46,7 +46,7 @@ const Search:FC = () => {
         return originalArray.filter(item => !matchedArray.includes(item));
     };
 
-    let textHighlighter:any;
+
 
     const handleSubmit = () => {
         dispatch(getHints(letters))
@@ -57,7 +57,7 @@ const Search:FC = () => {
             {
                 showInput ?
                     <SearchInput searchList={searchList} letters={letters} handleSelect={handleSelect} notMatchedArray={notMatchedArray}
-                                 textHighlighter={textHighlighter} handleBlur={handleBlur} handleChangeValue={handleChangeValue}
+                                 handleBlur={handleBlur} handleChangeValue={handleChangeValue}
                                  handleSubmit={handleSubmit} isDisplayingLoup={true}
                     />
 

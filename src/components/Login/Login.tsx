@@ -7,6 +7,7 @@ import {AppStateType} from "../../redux/redux-store";
 import wildhack from "../../assets/images/wildhack.svg";
 import cross from "../../assets/images/x.svg";
 import reality from "../../assets/images/realityx.svg";
+import Logo from '../../common/Logo/Logo';
 
 const Login:FC = () => {
     const isLogin = useSelector((state:AppStateType) => state.auth.isLogin)
@@ -22,9 +23,7 @@ const Login:FC = () => {
                     <div className={s.top}>
                         <div className={s.front}>
                             <NavLink to={'/'} className={s.logos}>
-                                <img className={s.wildhack} src={wildhack} alt='wildhack' />
-                                <img className={s.cross} src={cross} alt='cross' />
-                                <img className={s.reality} src={reality} alt='team' />
+                                <Logo />
                             </NavLink>
                             <div className={s.demo}>
                                 AUTHORIZATION

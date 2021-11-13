@@ -4,29 +4,6 @@
     padding: 170px 0 120px;
 }
 
-.logos {
-    display: block;
-    margin: 0 auto 89px;
-    @include flexible();
-    justify-content: center;
-    animation-name: logos;
-    animation-duration: 2s;
-    opacity: 1;
-}
-
-.wildhack {
-    width: 20%;
-}
-
-.cross {
-    margin: 0 30px;
-    width: .9%;
-}
-
-.reality {
-    width: 18%;
-}
-
 .demo {
     opacity: 1;
     animation-duration: 2s;
@@ -40,25 +17,12 @@
     margin-bottom: 30px;
 }
 
-@keyframes logos {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 @media (max-width: 1600px) {
     .top {
         padding: 100px 0 138px;
     }
     .demo {
         font-size: 18px;
-    }
-    .logos {
-        margin: 0 auto 60px;
     }
 }
 
