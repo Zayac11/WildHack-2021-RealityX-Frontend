@@ -2,6 +2,7 @@ import React, {FC, useState} from 'react';
 import s from './Form.module.scss'
 import FormItem from './FormItem/FormItem';
 import {useDispatch} from "react-redux";
+import {motion} from "framer-motion";
 import LoginButton from "./LoginButton/LoginButton";
 
 const Form:FC = () => {
@@ -21,16 +22,40 @@ const Form:FC = () => {
         }
     }
 
+    const animationContainer = {
+        hidden: {opacity: 1, scale: 1},
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                delayChildren: 0.1,
+                staggerChildren: 0.1
+            }
+        }
+    }
+    const animationItem = {
+        hidden: {x: 0, y: -50, opacity: 0},
+        visible: {
+            x: 0,
+            y: 0,
+            opacity: 1
+        }
+    }
+
     return (
-        <div className={s.wrapper}>
-            <div className={s.form}>
+        <motion.div className={s.wrapper}
+                    variants={animationContainer}
+                    animate='visible'
+                    initial='hidden'
+        >
+            <motion.div className={s.form} variants={animationItem}>
                 <FormItem value={username} handleChange={setUsername} placeholder={'Введите логин'}
                           type='text' handleKeyUp={handleKeyUp} text='Логин' />
                 <FormItem value={password} handleChange={setPassword} placeholder={'**********'}
                           type='password' handleKeyUp={handleKeyUp} text='Пароль' />
                 <LoginButton handleSubmit={handleSubmit} />
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 

@@ -25,8 +25,8 @@ const Cards:FC = () => {
         <div className={'container'}>
             <motion.div className={s.cards}
                         variants={animationContainer}
-                        initial="hidden"
-                        animate="visible">
+                        initial='hidden'
+                        animate='visible'>
                 {
                     images.map((img, index) => {
                         return (
