@@ -2,19 +2,25 @@ import React, {FC, useEffect} from 'react';
 import s from './Login.module.scss'
 import Form from './Form/Form';
 import {NavLink, Redirect} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
 import wildhack from "../../assets/images/wildhack.svg";
 import cross from "../../assets/images/x.svg";
 import reality from "../../assets/images/realityx.svg";
 import Logo from '../../common/Logo/Logo';
+import {authActions} from "../../redux/auth-reducer";
 
 const Login:FC = () => {
+    const dispatch = useDispatch()
     const isLogin = useSelector((state:AppStateType) => state.auth.isLogin)
     const isAuth = useSelector((state:AppStateType) => state.auth.isAuth)
 
     useEffect(() => {
         window.scrollTo(0, 0)
+
+        return () => {
+            dispatch(authActions.setLoginError(false))
+        }
     }, [])
 
     if(isLogin || isAuth) {

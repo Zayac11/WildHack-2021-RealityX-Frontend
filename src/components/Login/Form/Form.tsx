@@ -7,6 +7,7 @@ import LoginButton from "./LoginButton/LoginButton";
 import {authActions, login} from "../../../redux/auth-reducer";
 import LoginError from './LoginError/LoginError';
 import {AppStateType} from "../../../redux/redux-store";
+import { NavLink } from 'react-router-dom';
 
 const Form:FC = () => {
     const dispatch = useDispatch()
@@ -68,7 +69,12 @@ const Form:FC = () => {
                                 <LoginError text={'Неправильный логин или пароль'} />
                         }
                     </div>
-                    <LoginButton handleSubmit={handleSubmit} />
+                    <div className={s.buttons}>
+                        <LoginButton handleSubmit={handleSubmit} />
+                        <NavLink to='/' className={s.backBtn}>
+                            Назад
+                        </NavLink>
+                    </div>
                 </div>
                 <div className={s.back}></div>
             </motion.div>
