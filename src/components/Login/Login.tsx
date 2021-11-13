@@ -20,15 +20,17 @@ const Login:FC = () => {
             <div className={'gradientTop'}>
                 <div className={'container'}>
                     <div className={s.top}>
-                        <NavLink to={'/'} className={s.logos}>
-                            <img className={s.wildhack} src={wildhack} alt='wildhack' />
-                            <img className={s.cross} src={cross} alt='cross' />
-                            <img className={s.reality} src={reality} alt='team' />
-                        </NavLink>
-                        <div className={s.demo}>
-                            AUTHORIZATION
+                        <div className={s.front}>
+                            <NavLink to={'/'} className={s.logos}>
+                                <img className={s.wildhack} src={wildhack} alt='wildhack' />
+                                <img className={s.cross} src={cross} alt='cross' />
+                                <img className={s.reality} src={reality} alt='team' />
+                            </NavLink>
+                            <div className={s.demo}>
+                                AUTHORIZATION
+                            </div>
+                            <Form />
                         </div>
-                        <Form />
                     </div>
                 </div>
             </div>

@@ -52,22 +52,25 @@ const Form:FC = () => {
                     animate='visible'
                     initial='hidden'
         >
-            <motion.div className={s.form} variants={animationItem}>
-                <FormItem value={username} handleChange={handleChangeUsername} placeholder={'Введите логин'}
-                          type='text' handleKeyUp={handleKeyUp} text='Логин' />
-                <FormItem value={password} handleChange={handleChangePassword} placeholder={'**********'}
-                          type='password' handleKeyUp={handleKeyUp} text='Пароль' />
-                <div className={s.errors}>
-                    {
-                        isEmpty &&
-                            <LoginError text={'Пожалуйста, заполните все поля'} />
-                    }
-                    {
-                        isError &&
-                            <LoginError text={'Неправильный логин или пароль'} />
-                    }
+            <motion.div className={s.formContainer} variants={animationItem}>
+                <div className={s.form} >
+                    <FormItem value={username} handleChange={handleChangeUsername} placeholder={'Введите логин'}
+                              type='text' handleKeyUp={handleKeyUp} text='Логин' />
+                    <FormItem value={password} handleChange={handleChangePassword} placeholder={'**********'}
+                              type='password' handleKeyUp={handleKeyUp} text='Пароль' />
+                    <div className={s.errors}>
+                        {
+                            isEmpty &&
+                                <LoginError text={'Пожалуйста, заполните все поля'} />
+                        }
+                        {
+                            isError &&
+                                <LoginError text={'Неправильный логин или пароль'} />
+                        }
+                    </div>
+                    <LoginButton handleSubmit={handleSubmit} />
                 </div>
-                <LoginButton handleSubmit={handleSubmit} />
+                <div className={s.back}></div>
             </motion.div>
         </motion.div>
     );
