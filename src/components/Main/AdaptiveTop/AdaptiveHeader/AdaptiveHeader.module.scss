@@ -1,0 +1,44 @@
+@import "./src/common/commonStyles";
+
+.header {
+    background: linear-gradient(90deg, #CB11AB 0%, #481173 100%);
+    width: 100%;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    'empty logo buttons'
+;
+}
+
+
+.logo {
+    grid-area: logo;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.buttons {
+    grid-area: buttons;
+    @include flexible();
+    justify-content: flex-end;
+}
+
+.logout {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.login {
+    width: 56px;
+    margin-left: 15px;
+    @include flexible();
+    padding: 5px 0;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #FFFFFF;
+    border-radius: 33px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+

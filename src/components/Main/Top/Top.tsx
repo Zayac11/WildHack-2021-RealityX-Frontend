@@ -6,9 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import Search from "./Search/Search";
 import {authActions} from "../../../redux/auth-reducer";
 import {AppStateType} from "../../../redux/redux-store";
-import reality from '../../../assets/images/realityx.svg'
-import cross from '../../../assets/images/x.svg'
-import wildhack from '../../../assets/images/wildhack.svg'
 import Logo from '../../../common/Logo/Logo';
 
 const Top:FC = () => {
