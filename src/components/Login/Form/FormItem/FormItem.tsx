@@ -17,7 +17,7 @@ export default FormItem;
 
 type MyProps = {
     value: string,
-    handleChange: Dispatch<SetStateAction<string>>
+    handleChange: (value: string) => void,
     type: string,
     handleKeyUp: (e:any) => void,
     text: string,
