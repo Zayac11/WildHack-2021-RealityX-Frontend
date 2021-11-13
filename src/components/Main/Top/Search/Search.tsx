@@ -7,44 +7,30 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../../../redux/redux-store";
 
 const Search:FC = () => {
-    // const initialArray = ['cinema',
-    //     'music',
-    //     'games',
-    //     'tv',
-    //     'art',
-    //     'images',
-    //     'programming',
-    //     'portal',
-    //     'documents',
-    //     'folders',
-    //     'repositories',
-    //     'react',]
-
     const dispatch = useDispatch()
     const hints = useSelector((state:AppStateType) => state.search.hints)
 
     const [showInput, setShopInput] = useState(false)
     const [letters, setLetter] = useState('')
     const [array, setArray] = useState<Array<string>>([])
+    const [notMatchedArray, setNotMatchedArray] = useState<Array<string>>([]) //Отфильтрованный массив от совпадений
+    const [searchList, setSearchList] = useState(array) //Массив совпадений
 
     useEffect(() => {
         setArray(hints)
-        setSearchList(getMatchedList(letters, hints))
+        const matchedList = getMatchedList(letters, hints)
+        setSearchList(matchedList)
+        const notMatchedList = getNotMatchedList(hints, matchedList)
+        setNotMatchedArray(notMatchedList)
     }, [hints])
 
     const handleBlur = (showInput:boolean) => {
         setShopInput(showInput)
     }
 
-    const handleDeleteItem = (value:string, array: Array<string>) => {
-        let filteredArray = array.filter(arr => arr !== value)
-        let newList = getMatchedList(letters, filteredArray)
-        setArray(filteredArray)
-        setSearchList(newList)
-    }
-
     const handleChangeValue = (value:string) => {
-        setSearchList(getMatchedList(value, array))
+        setNotMatchedArray([])
+        setSearchList([])
         setLetter(value)
         dispatch(getHints(value))
     }
@@ -52,8 +38,10 @@ const Search:FC = () => {
     const getMatchedList = (searchText:string, array:Array<string>) => {
         return array.filter(item => item.toLowerCase().includes(searchText.toLowerCase()));
     };
+    const getNotMatchedList = (originalArray:Array<string>, matchedArray:Array<string>) => {
+        return originalArray.filter(item => !matchedArray.includes(item));
+    };
 
-    const [searchList, setSearchList] = useState(array) //Массив совпадений
     let textHighlighter:any;
 
     const handleSubmit = () => {
@@ -78,11 +66,13 @@ const Search:FC = () => {
                             onChange={(e) => handleChangeValue(e.target.value)} />
 
                         {
-                            searchList.length > 0 &&
+                            (searchList.length > 0 || notMatchedArray.length > 0) &&
                             <div className={s.list}>
+                                {
+                                    searchList.length > 0 &&
                                     <div className={s.listContainer}>
                                         {
-                                            searchList.map((search, index) => {
+                                            searchList.map((search) => {
                                                 //Выделение символов
                                                 let searchKeywordIdx = search.indexOf(letters.toLowerCase());
                                                 if (searchKeywordIdx > -1) {
@@ -95,13 +85,24 @@ const Search:FC = () => {
                                                     ];
                                                 }
                                                 return (
-                                                    <div key={search} className={s.item} onClick={() => handleDeleteItem(search, array)}>
+                                                    <div key={search} className={s.item}>
                                                         <span>{textHighlighter}</span>
                                                     </div>
                                                 )
                                             })
                                         }
                                     </div>
+                                }
+                                {
+                                    notMatchedArray.length > 0 &&
+                                    notMatchedArray.map((item:string) => {
+                                        return (
+                                            <div key={item} className={s.item}>
+                                                <span>{item}</span>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         }
                     </div>
