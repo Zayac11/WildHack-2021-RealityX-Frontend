@@ -59,6 +59,10 @@
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
+
+    & span {
+        font-weight: 700;
+    }
 }
 
 @keyframes logos {

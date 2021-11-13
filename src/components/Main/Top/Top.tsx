@@ -45,7 +45,7 @@ const Top:FC = () => {
                         isAuth &&
                             <div className={s.authorizedContainer}>
                                 <div className={s.authorized}>
-                                    Вы авторизированы как пользователь {username}
+                                    Вы авторизированы как пользователь <span>«{username}»</span>
                                 </div>
                             </div>
                     }

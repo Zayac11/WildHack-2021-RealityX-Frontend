@@ -8,7 +8,7 @@ let initialState = {
     isLogin: false as boolean,
     isLoginError: false as boolean,
     isInitialize: false as boolean,
-    username: 'username',
+    username: 'Username',
 }
 
 const authReducer = (state = initialState, action: AuthActionsType):InitialStateType  => {
