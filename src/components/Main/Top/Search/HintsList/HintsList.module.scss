@@ -29,6 +29,11 @@
     color: $primary-text-color;
 }
 
+.loader {
+    margin: 0 auto;
+    width: 32px;
+}
+
 .notFound {
     cursor: default;
     text-align: center;

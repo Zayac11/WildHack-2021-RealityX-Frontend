@@ -2,6 +2,9 @@ import React, {FC} from 'react';
 import s from "./HintsList.module.scss";
 import {motion} from 'framer-motion'
 import cl from "classnames";
+import {useSelector} from "react-redux";
+import {AppStateType} from "../../../../../redux/redux-store";
+import loader from '../../../../../assets/images/loader.svg'
 
 const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSelect, textHighlighter}) => {
     const animationContainer = {
@@ -23,6 +26,7 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
             opacity: 1
         }
     }
+    const isFetch = useSelector((state:AppStateType) => state.search.isFetch)
 
     return (
         <motion.div variants={animationContainer}
@@ -71,9 +75,16 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
             {
                 (notMatchedArray.length === 0 && searchList.length === 0) &&
                 <motion.ul className={s.list}>
-                    <li tabIndex={0} className={cl(s.notFound, s.item)}>
-                        <span>Ничего не найдено</span>
-                    </li>
+                    {
+                        isFetch ?
+                            <div className={s.item}>
+                                <img className={s.loader} src={loader} alt='loading...' />
+                            </div>
+                            :
+                            <li tabIndex={0} className={cl(s.notFound, s.item)}>
+                                <span>Ничего не найдено</span>
+                            </li>
+                    }
                 </motion.ul>
             }
         </motion.div>
