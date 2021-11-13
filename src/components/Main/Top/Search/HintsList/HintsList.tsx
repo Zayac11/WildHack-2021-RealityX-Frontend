@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import s from "./HintsList.module.scss";
 import {motion} from 'framer-motion'
+import cl from "classnames";
 
 const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSelect, textHighlighter}) => {
     const animationContainer = {
@@ -65,6 +66,14 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
                             )
                         })
                     }
+                </motion.ul>
+            }
+            {
+                (notMatchedArray.length === 0 && searchList.length === 0) &&
+                <motion.ul className={s.list}>
+                    <li tabIndex={0} className={cl(s.notFound, s.item)}>
+                        <span>Ничего не найдено</span>
+                    </li>
                 </motion.ul>
             }
         </motion.div>
