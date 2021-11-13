@@ -5,6 +5,7 @@ import LabelLoup from './LabelLoup/LabelLoup';
 import {getHints} from "../../../../redux/search-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../../../redux/redux-store";
+import HintsList from "./HintsList/HintsList";
 
 const Search:FC = () => {
     const dispatch = useDispatch()
@@ -26,6 +27,10 @@ const Search:FC = () => {
 
     const handleBlur = (showInput:boolean) => {
         setShopInput(showInput)
+    }
+
+    const handleSelect = (letters:string) => {
+        setLetter(letters)
     }
 
     const handleChangeValue = (value:string) => {
@@ -65,46 +70,9 @@ const Search:FC = () => {
                             debounceTimeout={500}
                             onChange={(e) => handleChangeValue(e.target.value)} />
 
-                        {
-                            (searchList.length > 0 || notMatchedArray.length > 0) &&
-                            <div className={s.list}>
-                                {
-                                    searchList.length > 0 &&
-                                    <div className={s.listContainer}>
-                                        {
-                                            searchList.map((search) => {
-                                                //Выделение символов
-                                                let searchKeywordIdx = search.indexOf(letters.toLowerCase());
-                                                if (searchKeywordIdx > -1) {
-                                                    textHighlighter = [
-                                                        search.substring(0, searchKeywordIdx),
-                                                        <span style={{fontWeight: 600, color: 'black'}} key={search}>
-                                                                {search.substring(searchKeywordIdx, searchKeywordIdx + letters.length)}
-                                                            </span>,
-                                                        search.substring(searchKeywordIdx + letters.length)
-                                                    ];
-                                                }
-                                                return (
-                                                    <div key={search} className={s.item}>
-                                                        <span>{textHighlighter}</span>
-                                                    </div>
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                }
-                                {
-                                    notMatchedArray.length > 0 &&
-                                    notMatchedArray.map((item:string) => {
-                                        return (
-                                            <div key={item} className={s.item}>
-                                                <span>{item}</span>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        }
+                        <HintsList searchList={searchList} letters={letters} handleSelect={handleSelect}
+                                   notMatchedArray={notMatchedArray} textHighlighter={textHighlighter}
+                        />
                     </div>
                     :
                     <>
