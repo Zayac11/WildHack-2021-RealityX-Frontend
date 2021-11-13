@@ -1,10 +1,19 @@
 import React, {FC} from 'react';
 import s from './CardItem.module.scss'
 import cl from 'classnames'
+import {motion} from "framer-motion"
 
 const CardItem:FC<MyProps> = ({img}) => {
+    const animationItem = {
+        hidden: {x: -100, y: 20, opacity: 0},
+        visible: {
+            x: 0,
+            y: 0,
+            opacity: 1
+        }
+    }
     return (
-        <div className={s.card}>
+        <motion.div variants={animationItem} className={s.card}>
             <div className={s.front}>
                 <div className={s.center}>
                     <img src={img} alt='icon' />
@@ -15,7 +24,7 @@ const CardItem:FC<MyProps> = ({img}) => {
             <div className={s.back}>
 
             </div>
-        </div>
+        </motion.div>
     );
 };
 

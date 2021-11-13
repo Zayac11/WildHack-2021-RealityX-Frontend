@@ -8,6 +8,9 @@
     margin: 0 auto 89px;
     @include flexible();
     justify-content: center;
+    animation-name: logos;
+    animation-duration: 2s;
+    opacity: 1;
 }
 
 .wildhack {
@@ -23,9 +26,10 @@
     width: 12%;
 }
 
-
-
 .demo {
+    opacity: 1;
+    animation-duration: 2s;
+    animation-name: logos;
     text-align: center;
     font-weight: 600;
     font-size: 24px;
@@ -51,6 +55,16 @@
     line-height: 21px;
     color: #FFFFFF;
 
+}
+
+@keyframes logos {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 1600px) {
