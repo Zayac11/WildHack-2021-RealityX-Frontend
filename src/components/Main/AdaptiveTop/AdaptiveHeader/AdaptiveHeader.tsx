@@ -13,6 +13,7 @@ const AdaptiveHeader:FC<MyProps> = ({handleSearchVisible}) => {
     const isAuth = useSelector((state:AppStateType) => state.auth.isAuth)
 
     const handleLogout = () => {
+        localStorage.removeItem('accessToken')
         dispatch(authActions.setIsUserLogin(false))
         dispatch(authActions.login(false))
         dispatch(authActions.logout())

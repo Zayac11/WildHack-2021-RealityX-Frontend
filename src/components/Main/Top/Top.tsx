@@ -15,6 +15,7 @@ const Top:FC = () => {
     const username = useSelector((state:AppStateType) => state.auth.username)
 
     const handleLogout = () => {
+        localStorage.removeItem('accessToken')
         dispatch(authActions.setIsUserLogin(false))
         dispatch(authActions.login(false))
         dispatch(authActions.logout())
