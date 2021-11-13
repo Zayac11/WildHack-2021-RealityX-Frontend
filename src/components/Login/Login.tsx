@@ -1,11 +1,20 @@
 import React, {FC} from 'react';
 import s from './Login.module.scss'
+import Form from './Form/Form';
+import {Redirect} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {AppStateType} from "../../redux/redux-store";
 import wildhack from "../../assets/images/wildhack.svg";
 import cross from "../../assets/images/x.svg";
 import reality from "../../assets/images/realityx.svg";
-import Form from './Form/Form';
 
 const Login:FC = () => {
+    const isLogin = useSelector((state:AppStateType) => state.auth.isLogin)
+    const isAuth = useSelector((state:AppStateType) => state.auth.isAuth)
+
+    if(isLogin || isAuth) {
+        return <Redirect to='/' />
+    }
     return (
         <div className={'outer'}>
             <div className={'gradientTop'}>

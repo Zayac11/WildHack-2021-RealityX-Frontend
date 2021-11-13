@@ -6,6 +6,7 @@ let initialState = {
     isAuth: false as boolean,
     isLogin: false as boolean,
     isLoginError: false as boolean,
+    username: '',
 }
 
 const authReducer = (state = initialState, action: AuthActionsType):InitialStateType  => {
@@ -58,11 +59,11 @@ export const login = (username: string, password: string): ThunkType => {
             if(data.data.access) {
                 localStorage.setItem('accessToken', data.data.access)
                 dispatch(authActions.login(true))
-                dispatch(authActions.setIsUserLogin(true))
+                dispatch(authActions.setIsUserLogin(true)) //Пользователь залогинился нужно редиректать
             }
         }
         catch (e:any) {
-            console.error('login', e.config)
+            console.error('login error', e.config)
             dispatch(authActions.setLoginError(true))
         }
     }
