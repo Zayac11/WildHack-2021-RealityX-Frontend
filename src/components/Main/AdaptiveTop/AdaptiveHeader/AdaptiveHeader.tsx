@@ -7,6 +7,7 @@ import {AppStateType} from "../../../../redux/redux-store";
 import { NavLink } from 'react-router-dom';
 import cl from "classnames";
 import {authActions} from "../../../../redux/auth-reducer";
+import {getHints, searchActions} from "../../../../redux/search-reducer";
 
 const AdaptiveHeader:FC<MyProps> = ({handleSearchVisible}) => {
     const dispatch = useDispatch()
@@ -17,6 +18,8 @@ const AdaptiveHeader:FC<MyProps> = ({handleSearchVisible}) => {
         dispatch(authActions.setIsUserLogin(false))
         dispatch(authActions.login(false))
         dispatch(authActions.logout())
+        dispatch(searchActions.hintsReceived([]))
+        dispatch(getHints(''))
     }
 
     return (

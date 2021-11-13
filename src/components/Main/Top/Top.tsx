@@ -7,6 +7,7 @@ import Search from "./Search/Search";
 import {authActions} from "../../../redux/auth-reducer";
 import {AppStateType} from "../../../redux/redux-store";
 import Logo from '../../../common/Logo/Logo';
+import {getHints, searchActions} from "../../../redux/search-reducer";
 
 const Top:FC = () => {
 
@@ -19,6 +20,8 @@ const Top:FC = () => {
         dispatch(authActions.setIsUserLogin(false))
         dispatch(authActions.login(false))
         dispatch(authActions.logout())
+        dispatch(searchActions.hintsReceived([]))
+        dispatch(getHints(''))
     }
 
     return (
