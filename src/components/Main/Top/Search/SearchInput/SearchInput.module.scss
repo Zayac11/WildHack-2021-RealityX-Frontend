@@ -1,0 +1,23 @@
+@import "./src/common/commonStyles";
+
+.inputContainer {
+    border-radius: 28px;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+.input {
+    height: 58px;
+    position: relative;
+    z-index: 20;
+    border-radius: 56px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: rgba(255,255,255,1);
+    padding: 18px 120px 18px 30px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}

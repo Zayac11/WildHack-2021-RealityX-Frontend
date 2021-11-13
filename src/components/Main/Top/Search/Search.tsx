@@ -1,11 +1,10 @@
 import React, {FC, useEffect, useState} from 'react';
 import s from './Search.module.scss'
-import {DebounceInput} from 'react-debounce-input'
 import LabelLoup from './LabelLoup/LabelLoup';
 import {getHints} from "../../../../redux/search-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../../../../redux/redux-store";
-import HintsList from "./HintsList/HintsList";
+import SearchInput from "./SearchInput/SearchInput";
 
 const Search:FC = () => {
     const dispatch = useDispatch()
@@ -57,23 +56,11 @@ const Search:FC = () => {
         <div className={s.search}>
             {
                 showInput ?
-                    <div className={s.inputContainer}>
-                        <LabelLoup letters={letters} handleSubmit={handleSubmit} />
-                        <DebounceInput
-                            value={letters}
-                            autoFocus
-                            placeholder='Введите поисковый запрос'
-                            minLength={0}
-                            className={s.input}
-                            onBlur={() => handleBlur(false)}
-                            type="text"
-                            debounceTimeout={500}
-                            onChange={(e) => handleChangeValue(e.target.value)} />
+                    <SearchInput searchList={searchList} letters={letters} handleSelect={handleSelect} notMatchedArray={notMatchedArray}
+                                 textHighlighter={textHighlighter} handleBlur={handleBlur} handleChangeValue={handleChangeValue}
+                                 handleSubmit={handleSubmit} isDisplayingLoup={true}
+                    />
 
-                        <HintsList searchList={searchList} letters={letters} handleSelect={handleSelect}
-                                   notMatchedArray={notMatchedArray} textHighlighter={textHighlighter}
-                        />
-                    </div>
                     :
                     <>
                         <div onClick={() => setShopInput(true)} className={s.container}>
