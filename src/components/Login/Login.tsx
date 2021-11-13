@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import s from './Login.module.scss'
 import Form from './Form/Form';
-import {Redirect} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {AppStateType} from "../../redux/redux-store";
 import wildhack from "../../assets/images/wildhack.svg";
@@ -20,11 +20,11 @@ const Login:FC = () => {
             <div className={'gradientTop'}>
                 <div className={'container'}>
                     <div className={s.top}>
-                        <div className={s.logos}>
+                        <NavLink to={'/'} className={s.logos}>
                             <img className={s.wildhack} src={wildhack} alt='wildhack' />
                             <img className={s.cross} src={cross} alt='cross' />
                             <img className={s.reality} src={reality} alt='team' />
-                        </div>
+                        </NavLink>
                         <div className={s.demo}>
                             AUTHORIZATION
                         </div>

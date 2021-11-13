@@ -5,6 +5,7 @@
 }
 
 .logos {
+    display: block;
     margin: 0 auto 89px;
     @include flexible();
     justify-content: center;
