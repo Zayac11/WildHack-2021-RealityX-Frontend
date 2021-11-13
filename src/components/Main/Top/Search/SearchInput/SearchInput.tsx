@@ -7,6 +7,7 @@ import HintsList from "../HintsList/HintsList";
 const SearchInput:FC<MyProps> = ({letters, handleSubmit, handleBlur, handleSelect,
                                      searchList, notMatchedArray,
                                      handleChangeValue, isDisplayingLoup, textHighlighter}) => {
+
     return (
         <div className={s.inputContainer}>
             {
@@ -19,7 +20,7 @@ const SearchInput:FC<MyProps> = ({letters, handleSubmit, handleBlur, handleSelec
                 placeholder='Введите поисковый запрос'
                 minLength={0}
                 className={s.input}
-                // onBlur={() => handleBlur(false)}
+                onBlur={(e:any) => handleBlur(e)}
                 type="text"
                 debounceTimeout={500}
                 onChange={(e) => handleChangeValue(e.target.value)} />

@@ -10,7 +10,7 @@ const Search:FC = () => {
     const dispatch = useDispatch()
     const hints = useSelector((state:AppStateType) => state.search.hints)
 
-    const [showInput, setShopInput] = useState(false)
+    const [showInput, setShowInput] = useState(false)
     const [letters, setLetter] = useState('')
     const [array, setArray] = useState<Array<string>>([])
     const [notMatchedArray, setNotMatchedArray] = useState<Array<string>>([]) //Отфильтрованный массив от совпадений
@@ -28,8 +28,18 @@ const Search:FC = () => {
         setNotMatchedArray(notMatchedList)
     }, [hints])
 
-    const handleBlur = (showInput:boolean) => {
-        setShopInput(showInput)
+    const handleBlur = (e:any) => {
+        if(e.relatedTarget) {
+            if(e.relatedTarget.tagName === 'LI') {
+                //Ничего не делаем, работает handleSelect
+            }
+            else {
+                setShowInput(false)
+            }
+        }
+        else {
+            setShowInput(false)
+        }
     }
 
     const handleSelect = (letters:string) => {
@@ -37,6 +47,7 @@ const Search:FC = () => {
         setNotMatchedArray([])
         setSearchList([])
         setLetter(letters)
+        setShowInput(false)
     }
 
     const handleChangeValue = (value:string) => {
@@ -69,13 +80,15 @@ const Search:FC = () => {
 
                     :
                     <>
-                        <div onClick={() => setShopInput(true)} className={s.container}>
+                        <div className={s.container}>
                             <LabelLoup letters={letters} handleSubmit={handleSubmit} />
-                            {
-                                letters !== '' ?
-                                    <span className={s.closedPlaceholder}>{letters}</span>
-                                    : <span className={s.closedPlaceholder}>Введите поисковый запрос</span>
-                            }
+                            <div onClick={() => setShowInput(true)} className={s.containerInner}>
+                                {
+                                    letters !== '' ?
+                                        <span className={s.closedPlaceholder}>{letters}</span>
+                                        : <span className={s.closedPlaceholder}>Введите поисковый запрос</span>
+                                }
+                            </div>
                         </div>
                     </>
             }

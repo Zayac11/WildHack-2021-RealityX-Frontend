@@ -28,6 +28,9 @@ const AdaptiveSearch:FC<MyProps> = ({handleSearchVisible}) => {
     }, [hints])
 
     const handleSelect = (letters:string) => {
+        dispatch(getHints(letters))
+        setNotMatchedArray([])
+        setSearchList([])
         setLetter(letters)
     }
 

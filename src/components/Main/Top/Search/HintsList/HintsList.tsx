@@ -35,7 +35,7 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
                 >
                     {
                         searchList.length > 0 &&
-                        searchList.map((search) => {
+                        searchList.map((search, index) => {
                             //Выделение символов
                             let searchKeywordIdx = search.indexOf(letters.toLowerCase());
                             if (searchKeywordIdx > -1) {
@@ -49,7 +49,7 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
                                 ];
                             }
                             return (
-                                <li key={Math.random()} className={s.item} onClick={() => handleSelect(search)}>
+                                <li tabIndex={index} key={Math.random()} className={s.item} onClick={() => handleSelect(search)}>
                                     <span>{textHighlighter}</span>
                                 </li>
                             )
@@ -57,9 +57,9 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
                     }
                     {
                         notMatchedArray.length > 0 &&
-                        notMatchedArray.map((item:string) => {
+                        notMatchedArray.map((item:string, index) => {
                             return (
-                                <li key={item} className={s.item} onClick={() => handleSelect(item)}>
+                                <li tabIndex={index} key={item} className={s.item} onClick={() => handleSelect(item)}>
                                     <span>{item}</span>
                                 </li>
                             )
