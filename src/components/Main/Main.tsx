@@ -1,9 +1,12 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import AdaptiveTop from './AdaptiveTop/AdaptiveTop';
 import Cards from './Cards/Cards';
 import Top from './Top/Top';
 
 const Main:FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <div className={'outer'}>
             {

@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import s from './Login.module.scss'
 import Form from './Form/Form';
 import {NavLink, Redirect} from "react-router-dom";
@@ -12,6 +12,10 @@ import Logo from '../../common/Logo/Logo';
 const Login:FC = () => {
     const isLogin = useSelector((state:AppStateType) => state.auth.isLogin)
     const isAuth = useSelector((state:AppStateType) => state.auth.isAuth)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     if(isLogin || isAuth) {
         return <Redirect to='/' />
