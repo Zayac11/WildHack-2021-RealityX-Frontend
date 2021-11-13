@@ -33,3 +33,18 @@
         border: 1px solid $primary-text-color;
     }
 }
+
+@media (max-width: 768px) {
+    .label, .input {
+        font-size: 16px;
+    }
+    .input {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .label, .input {
+        font-size: 14px;
+    }
+}

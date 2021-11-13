@@ -23,3 +23,15 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 768px) {
+    .error {
+        top: -20px;
+    }
+}
+@media (max-width: 480px) {
+    .error {
+        font-size: 12px;
+    }
+}
+

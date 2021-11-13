@@ -19,6 +19,8 @@
 }
 
 .reality {
+    position: relative;
+    top: 4px;
     width: 18%;
 }
 
@@ -44,5 +46,26 @@
     }
     .logos {
         margin: 0 auto 30px;
+    }
+}
+@media (max-width: 650px) {
+    .wildhack {
+        width: 40%;
+    }
+
+    .cross {
+        margin: 0 10px;
+        width: 1.5%;
+    }
+
+    .reality {
+        width: 35%;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .reality {
+        top: 0;
     }
 }

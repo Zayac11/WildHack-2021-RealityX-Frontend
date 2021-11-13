@@ -1,4 +1,4 @@
-import React, {Dispatch, FC, SetStateAction} from 'react';
+import React, {FC} from 'react';
 import s from './FormItem.module.scss'
 
 const FormItem:FC<MyProps> = React.memo(({value, handleChange, type, handleKeyUp, text, placeholder}) => {

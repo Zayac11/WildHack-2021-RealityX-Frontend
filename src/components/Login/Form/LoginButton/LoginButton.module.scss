@@ -11,3 +11,17 @@
     padding: 18px 34px;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .button {
+        padding: 13px 23px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    .button {
+        padding: 10px 17px;
+        font-size: 14px;
+    }
+}
+
