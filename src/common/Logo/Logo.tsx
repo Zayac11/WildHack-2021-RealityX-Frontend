@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './Logo.module.scss'
-import wildhack from "../../assets/images/wildhack.svg";
+import wildhack from "../../assets/images/wildhack_from_site.svg";
 import cross from "../../assets/images/x.svg";
-import reality from "../../assets/images/realityx.svg";
+import reality from "../../assets/images/realityx_white.svg";
 
 const Logo = () => {
     return (

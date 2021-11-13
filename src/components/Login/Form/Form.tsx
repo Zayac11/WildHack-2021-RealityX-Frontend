@@ -14,7 +14,7 @@ const Form:FC = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [isError, setIsError] = useState(false)
-    const [isEmpty, setIsEmpty] = useState(true)
+    const [isEmpty, setIsEmpty] = useState(false)
     const isLoginError = useSelector((state:AppStateType) => state.auth.isLoginError)
 
     useEffect(() => {
