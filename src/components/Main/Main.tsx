@@ -6,7 +6,7 @@ const Main:FC = () => {
     return (
         <div className={'outer'}>
             <Top />
-            {/*<Cards />*/}
+            <Cards />
         </div>
     );
 };

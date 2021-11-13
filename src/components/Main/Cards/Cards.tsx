@@ -7,7 +7,7 @@ import CardItem from './CardItem/CardItem';
 import {motion} from "framer-motion"
 
 const Cards:FC = () => {
-    const images = [fire, balloon, stars]
+    const images = [fire, stars, balloon]
 
     const animationContainer = {
         hidden: {opacity: 1, scale: 1},
