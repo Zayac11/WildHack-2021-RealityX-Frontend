@@ -1,4 +1,5 @@
-export const baseURL = process.env.REACT_APP_PRODUCTION_URL || window.location.origin + "/";
+// export const baseURL = process.env.REACT_APP_PRODUCTION_URL || window.location.origin + "/";
+export const baseURL = 'http://89.108.79.130:8007/'
 
 export enum StatusCodesEnum {
     Success = 200,
