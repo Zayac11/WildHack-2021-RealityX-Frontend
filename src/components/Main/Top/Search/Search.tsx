@@ -46,8 +46,6 @@ const Search:FC = () => {
         return originalArray.filter(item => !matchedArray.includes(item));
     };
 
-
-
     const handleSubmit = () => {
         dispatch(getHints(letters))
     }

@@ -123,3 +123,31 @@
         bottom: -15px;
     }
 }
+
+@media (max-width: 650px) {
+    .card {
+        margin: 0 auto;
+        width: 60%;
+    }
+    .center {
+        padding: 55px 30px;
+
+    }
+}
+@media (max-width: 480px) {
+    .card {
+        margin: 0 auto;
+        width: 60%;
+    }
+    .center {
+        padding: 35px 30px;
+    }
+}
+@media (max-width: 280px) {
+    .center {
+        & img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}

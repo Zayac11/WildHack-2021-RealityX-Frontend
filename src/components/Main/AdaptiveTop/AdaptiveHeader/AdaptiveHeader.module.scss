@@ -4,6 +4,7 @@
     background: linear-gradient(90deg, #CB11AB 0%, #481173 100%);
     width: 100%;
     display: grid;
+    grid-gap: 10px;
     padding: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
@@ -11,14 +12,21 @@
 ;
 }
 
+.logoContainer {
+    grid-area: logo;
+    @include flexible();
+}
 
 .logo {
-    grid-area: logo;
+    animation-duration: 2s;
+    animation-name: logos;
     width: 120px;
     margin: 0 auto;
 }
 
 .buttons {
+    animation-duration: 2s;
+    animation-name: logos;
     grid-area: buttons;
     @include flexible();
     justify-content: flex-end;
@@ -42,3 +50,28 @@
     color: #FFFFFF;
 }
 
+@keyframes logos {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80px;
+    }
+    .buttons {
+        & img {
+            width: 15px;
+        }
+    }
+
+    .login {
+        font-size: 10px;
+        width: 51px;
+    }
+}

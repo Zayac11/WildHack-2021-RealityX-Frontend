@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import s from './AdaptiveTop.module.scss'
 import AdaptiveSearch from "./AdaptiveSearch/AdaptiveSearch";
 import AdaptiveHeader from "./AdaptiveHeader/AdaptiveHeader";
 
@@ -14,11 +13,10 @@ const AdaptiveTop = () => {
     return (
         <>
             {
-                isSearchVisible ?
+                isSearchVisible &&
                     <AdaptiveSearch handleSearchVisible={handleSearchVisible} />
-                :
-                    <AdaptiveHeader handleSearchVisible={handleSearchVisible}/>
             }
+                    <AdaptiveHeader handleSearchVisible={handleSearchVisible}/>
         </>
     );
 };

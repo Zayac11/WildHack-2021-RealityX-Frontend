@@ -20,7 +20,9 @@ const AdaptiveHeader:FC<MyProps> = ({handleSearchVisible}) => {
 
     return (
         <div className={s.header}>
-            <img className={s.logo} src={reality} alt='team' />
+            <div className={s.logoContainer}>
+                <img className={s.logo} src={reality} alt='team' />
+            </div>
             <div className={s.buttons}>
                 <img onClick={() => handleSearchVisible(true)} className={s.loup} src={loup} alt='loup' />
                 {
