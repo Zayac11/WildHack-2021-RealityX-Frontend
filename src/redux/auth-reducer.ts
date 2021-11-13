@@ -3,7 +3,7 @@ import {authAPI} from "../api/auth-api";
 
 export type InitialStateType = typeof initialState
 let initialState = {
-    isAuth: false as boolean,
+    isAuth: true as boolean,
     isLogin: false as boolean,
     isLoginError: false as boolean,
     username: 'username',

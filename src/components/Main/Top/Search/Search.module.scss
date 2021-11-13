@@ -42,3 +42,21 @@
     line-height: 21px;
     color: rgba(0, 0, 0, 0.25);
 }
+
+@media (max-width: 992px) {
+    .input, .container {
+        height: 52px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .container {
+        padding: 16px 120px 15px 20px;
+
+    }
+    .input {
+        padding: 15px 120px 15px 20px;
+    }
+    .closedPlaceholder {
+        font-size: 16px;
+    }
+}
