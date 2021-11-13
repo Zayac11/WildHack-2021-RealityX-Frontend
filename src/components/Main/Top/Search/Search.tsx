@@ -17,6 +17,10 @@ const Search:FC = () => {
     const [searchList, setSearchList] = useState(array) //Массив совпадений
 
     useEffect(() => {
+        dispatch(getHints('')) //Запрос за начальными данными
+    }, [])
+
+    useEffect(() => {
         setArray(hints)
         const matchedList = getMatchedList(letters, hints)
         setSearchList(matchedList)
