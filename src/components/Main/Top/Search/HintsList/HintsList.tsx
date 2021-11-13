@@ -15,7 +15,7 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
         }
     }
     const animationItem = {
-        hidden: {x: 0, y: -50, opacity: 0},
+        hidden: {x: 0, y: 20, opacity: 0},
         visible: {
             x: 0,
             y: 0,

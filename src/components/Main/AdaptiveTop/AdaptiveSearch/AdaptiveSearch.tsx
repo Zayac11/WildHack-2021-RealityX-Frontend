@@ -10,7 +10,6 @@ const AdaptiveSearch:FC<MyProps> = ({handleSearchVisible}) => {
 
     const dispatch = useDispatch()
     const hints = useSelector((state:AppStateType) => state.search.hints)
-    const test = ['asddassa d asd s s adss da ads adsd as sadsa as das das das d', 'zxc', 'qwe', 'rty', 'fgh', 'vbn']
     const [letters, setLetter] = useState('')
     const [array, setArray] = useState<Array<string>>([])
     const [notMatchedArray, setNotMatchedArray] = useState<Array<string>>([]) //Отфильтрованный массив от совпадений
@@ -62,7 +61,7 @@ const AdaptiveSearch:FC<MyProps> = ({handleSearchVisible}) => {
                         Отмена
                     </button>
                 </div>
-                <HintsList searchList={searchList} notMatchedArray={test} letters={letters} handleSelect={handleSelect} />
+                <HintsList searchList={searchList} notMatchedArray={notMatchedArray} letters={letters} handleSelect={handleSelect} />
             </div>
         </div>
     );
