@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import s from "./HintsList.module.scss";
 import {motion} from 'framer-motion'
 
-const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSelect}) => {
+const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSelect, textHighlighter}) => {
     const animationContainer = {
         hidden: {opacity: 1, scale: 1},
         visible: {
@@ -22,7 +22,7 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
             opacity: 1
         }
     }
-    let textHighlighter:any;
+
     return (
         <motion.div variants={animationContainer}
                     animate='visible'
@@ -39,16 +39,17 @@ const HintsList:FC<MyProps> = ({searchList, notMatchedArray, letters, handleSele
                             //Выделение символов
                             let searchKeywordIdx = search.indexOf(letters.toLowerCase());
                             if (searchKeywordIdx > -1) {
+
                                 textHighlighter = [
                                     search.substring(0, searchKeywordIdx),
-                                    <span style={{fontWeight: 600, color: 'black'}} key={search}>
+                                    <span style={{fontWeight: 600, color: 'black'}} key={Math.random()}>
                                                             {search.substring(searchKeywordIdx, searchKeywordIdx + letters.length)}
                                                         </span>,
                                     search.substring(searchKeywordIdx + letters.length)
                                 ];
                             }
                             return (
-                                <li key={search} className={s.item} onClick={() => handleSelect(textHighlighter)}>
+                                <li key={Math.random()} className={s.item} onClick={() => handleSelect(search)}>
                                     <span>{textHighlighter}</span>
                                 </li>
                             )
@@ -76,5 +77,6 @@ type MyProps = {
     searchList: Array<string>,
     notMatchedArray: Array<string>,
     letters: string
-    handleSelect: (item: string) => void
+    handleSelect: (item: string) => void,
+    textHighlighter: any
 }

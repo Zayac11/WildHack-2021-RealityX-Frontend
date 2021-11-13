@@ -45,6 +45,7 @@ const AdaptiveSearch:FC<MyProps> = ({handleSearchVisible}) => {
         return originalArray.filter(item => !matchedArray.includes(item));
     };
 
+    let textHighlighter: any;
     return (
         <div className={s.searchWrapper}>
             <div className={s.search}>
@@ -65,7 +66,7 @@ const AdaptiveSearch:FC<MyProps> = ({handleSearchVisible}) => {
                         Отмена
                     </button>
                 </div>
-                <HintsList searchList={searchList} notMatchedArray={notMatchedArray} letters={letters} handleSelect={handleSelect} />
+                <HintsList textHighlighter={textHighlighter} searchList={searchList} notMatchedArray={notMatchedArray} letters={letters} handleSelect={handleSelect} />
             </div>
         </div>
     );

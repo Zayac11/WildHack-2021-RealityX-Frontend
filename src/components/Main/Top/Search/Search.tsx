@@ -33,6 +33,9 @@ const Search:FC = () => {
     }
 
     const handleSelect = (letters:string) => {
+        dispatch(getHints(letters))
+        setNotMatchedArray([])
+        setSearchList([])
         setLetter(letters)
     }
 
@@ -53,6 +56,7 @@ const Search:FC = () => {
     const handleSubmit = () => {
         dispatch(getHints(letters))
     }
+    let textHighlighter:any;
 
     return (
         <div className={s.search}>
@@ -60,7 +64,7 @@ const Search:FC = () => {
                 showInput ?
                     <SearchInput searchList={searchList} letters={letters} handleSelect={handleSelect} notMatchedArray={notMatchedArray}
                                  handleBlur={handleBlur} handleChangeValue={handleChangeValue}
-                                 handleSubmit={handleSubmit} isDisplayingLoup={true}
+                                 handleSubmit={handleSubmit} isDisplayingLoup={true} textHighlighter={textHighlighter}
                     />
 
                     :
