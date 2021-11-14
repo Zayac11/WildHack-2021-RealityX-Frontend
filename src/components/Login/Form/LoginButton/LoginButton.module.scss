@@ -1,0 +1,27 @@
+@import "./src/common/commonStyles";
+
+.button {
+    display: block;
+    background: linear-gradient(90deg, #9B4CA6 0%, #CB11AB 100%);
+    border-radius: 33px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    padding: 18px 34px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .button {
+        padding: 13px 23px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    .button {
+        padding: 10px 17px;
+        font-size: 14px;
+    }
+}
+

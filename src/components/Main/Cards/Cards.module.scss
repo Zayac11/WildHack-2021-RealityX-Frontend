@@ -1,0 +1,27 @@
+@import "./src/common/commonStyles";
+
+.cards {
+    padding: 50px 0 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+
+@media (max-width: 1260px) {
+    .cards {
+        padding: 50px 20px 80px;
+    }
+}
+@media (max-width: 1200px) { //1200px - 993px
+
+}
+@media (max-width: 992px) { //992px - 769px
+
+}
+@media (max-width: 650px) {
+    .cards {
+        padding: 20px 20px 40px;
+        grid-template-columns: 1fr;
+    }
+
+}

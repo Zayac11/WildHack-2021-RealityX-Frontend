@@ -1,0 +1,50 @@
+@import "./src/common/commonStyles";
+
+.item {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: $primary-text-color;
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 100%;
+    padding: 15px 20px;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: $primary-text-color;
+    transition: all 0.3s ease;
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+    }
+    &:focus {
+        border: 1px solid $primary-text-color;
+    }
+}
+
+@media (max-width: 768px) {
+    .label, .input {
+        font-size: 16px;
+    }
+    .input {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .label, .input {
+        font-size: 14px;
+    }
+}

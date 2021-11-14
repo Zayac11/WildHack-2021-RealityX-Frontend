@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {FC, useEffect} from 'react';
+import { Route, Switch } from 'react-router-dom';
+import './App.scss';
+import '../src/common/style.scss'
+import Main from './components/Main/Main';
+import Login from './components/Login/Login';
+import {useDispatch, useSelector} from "react-redux";
+import {AppStateType} from "./redux/redux-store";
+import {authActions, checkAuthorization} from "./redux/auth-reducer";
+import Preloader from "./common/Preloader/Preloader";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App:FC = () => {
+    const dispatch = useDispatch()
+    const isInitialize = useSelector((state: AppStateType) => state.auth.isInitialize)
+
+    useEffect(() => {
+        if(localStorage.getItem('accessToken')) {
+            dispatch(checkAuthorization())
+        }
+        else {
+            dispatch(authActions.setInitialize(true))
+        }
+    }, [dispatch])
+
+    if(!isInitialize) {
+        return <Preloader />
+    }
+
+    return (
+        <Switch>
+            <Route exact path='/login' render={() => <Login />} />
+            <Route exact path='/' render={() => <Main />} />
+        </Switch>
+    );
 }
 
 export default App;

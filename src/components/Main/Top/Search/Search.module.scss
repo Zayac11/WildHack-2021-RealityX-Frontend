@@ -1,0 +1,39 @@
+@import "./src/common/commonStyles";
+
+.search {
+    width: calc(100% - 135px);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    border-radius: 56px;
+    background: rgba(255,255,255, 1);
+    cursor: pointer;
+}
+
+.containerInner {
+    height: 58px;
+    padding: 19px 30px 18px 30px;
+}
+
+.closedPlaceholder {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 992px) {
+    .containerInner {
+        height: 52px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .containerInner {
+        padding: 15px 20px 15px 20px;
+    }
+    .closedPlaceholder {
+        font-size: 16px;
+    }
+}

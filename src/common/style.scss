@@ -1,0 +1,17 @@
+.outer {
+    position: relative;
+    background-color: #e5e5e5;
+    min-height: 101vh;
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gradientTop {
+    width: 100%;
+    background: linear-gradient(90deg, #CB11AB 0%, #481173 100%);
+    border-radius: 0 0 30px 30px;
+}

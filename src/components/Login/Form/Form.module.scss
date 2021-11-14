@@ -1,0 +1,80 @@
+@import "./src/common/commonStyles";
+
+.wrapper {
+    position: relative;
+}
+
+.formContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    max-width: 510px;
+}
+
+.form {
+    position: relative;
+    z-index: 2;
+    background: #FFFFFF;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 50px 60px;
+}
+
+.buttons {
+    @include flexible();
+    justify-content: space-between;
+}
+
+.backBtn {
+    display: block;
+    font-size: 16px;
+    color: #CB11AB;
+}
+
+.errors {
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -25px;
+    margin: auto;
+    z-index: 1;
+    width: 90%;
+    height: 200px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .formContainer {
+
+    }
+    .form {
+        padding: 30px 40px;
+    }
+    .back {
+        bottom: -20px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        padding: 20px;
+    }
+    .back {
+        bottom: -15px;
+        width: 80%;
+    }
+    .backBtn {
+        font-size: 14px;
+    }
+}
+
+

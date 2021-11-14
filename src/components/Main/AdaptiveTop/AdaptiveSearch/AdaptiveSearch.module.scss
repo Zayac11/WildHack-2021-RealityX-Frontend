@@ -1,0 +1,77 @@
+@import "./src/common/commonStyles";
+
+.searchWrapper {
+    min-width: 280px;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    position: absolute;
+    z-index: 20;
+    min-height: 100vh;
+;
+}
+
+.back {
+    padding-top: 66px;
+}
+
+
+.search {
+    position: relative;
+}
+
+.searchInputContainer {
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    padding: 10px 15px 15px;
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: 7fr 1fr;
+    grid-template-areas:
+    'input cancel';
+    grid-gap: 10px;
+    top: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+.inputContainer {
+    border-radius: 28px;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+    grid-area: input;
+}
+
+.input {
+    position: relative;
+    z-index: 20;
+    border-radius: 56px;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-weight: 500;;
+    line-height: 18px;
+    height: 100%;
+    background: rgba(242,242,242,1);
+    font-size: 16px;
+    padding: 12px 20px;
+}
+
+.cancel {
+    background-color: transparent;
+    color: #CB11AB;
+    display: block;
+    grid-area: cancel;
+    font-size: 12px;
+}
+
+.list {
+
+}

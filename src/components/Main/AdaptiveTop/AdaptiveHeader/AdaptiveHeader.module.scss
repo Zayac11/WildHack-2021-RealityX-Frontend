@@ -1,0 +1,77 @@
+@import "./src/common/commonStyles";
+
+.header {
+    background: linear-gradient(90deg, #CB11AB 0%, #481173 100%);
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    'empty logo buttons'
+;
+}
+
+.logoContainer {
+    grid-area: logo;
+    @include flexible();
+}
+
+.logo {
+    animation-duration: 2s;
+    animation-name: logos;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.buttons {
+    animation-duration: 2s;
+    animation-name: logos;
+    grid-area: buttons;
+    @include flexible();
+    justify-content: flex-end;
+}
+
+.logout {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.login {
+    width: 56px;
+    margin-left: 15px;
+    @include flexible();
+    padding: 5px 0;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #FFFFFF;
+    border-radius: 33px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+@keyframes logos {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80px;
+    }
+    .buttons {
+        & img {
+            width: 15px;
+        }
+    }
+
+    .login {
+        font-size: 10px;
+        width: 51px;
+    }
+}
