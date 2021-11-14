@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "./redux/redux-store";
 import {authActions, checkAuthorization} from "./redux/auth-reducer";
+import Preloader from "./common/Preloader/Preloader";
 
 const App:FC = () => {
     const dispatch = useDispatch()
@@ -22,7 +23,7 @@ const App:FC = () => {
     }, [dispatch])
 
     if(!isInitialize) {
-        return <div>Загрузка...</div>
+        return <Preloader />
     }
 
     return (
